@@ -11,11 +11,11 @@
 
 
     /* theme colors */
-    --nl-primary-color: rgb(145, 203, 251);
-    --nl-secondary-color: rgb(66, 148, 186);
-    --nl-highlight-color: rgb(250, 225, 120);
-    --nl-dark-color: rgb(33, 33, 33);
-    --nl-light-color: rgb(222, 238, 251);
+    --nl-primary-color: #BFCCF5;
+    --nl-secondary-color: #7693F5;
+    --nl-highlight-color: #F4DB9C;
+    --nl-dark-color: #202842;
+    --nl-light-color: #f2eee4;
     --nl-background-color: rgb(250, 250, 250, .8);
 
 
@@ -45,6 +45,11 @@ h1,
     color: var(--nl-title-color);
 }
 
+/* Bootstrap Overrides */
+
+
+/* Form Control Overrides */
+
 html,
 body {
     height: 100%;
@@ -68,12 +73,20 @@ header {
     padding-top: 74px;
 }
 
+.navbar-custom {
+    background-color: var(--nl-dark-color);
+}
+
+.nav-link {
+    color: var(--nl-highlight-color);
+}
+
 .mainHeader {
     background-image: url(/img/DevPortFolioBG_576.png);
     height: 200px;
     background-repeat: no-repeat;
     background-position: right top;
-    background-color: var(--nl-light-color);
+    background-color: var(--nl-primary-color);
 }
 
 .mainHeader-wrapper {
@@ -84,12 +97,12 @@ header {
 .mainTitle {
     font-family: var(--nl-title-font);
     font-size: 2.5rem;
-    line-height: 2rem;
+    line-height: .6rem;
     color: var(--nl-dark-color);
 }
 
 .mainLogo {
-    height: .6em;
+    height: 200px;
 }
 
 .subTitle {
@@ -114,11 +127,11 @@ header {
 }
 
 .section-page:nth-child(even) {
-    background-color: var(--nl-light-color);
+    background-color: var(--nl-primary-color);
 }
 
 .section-page:nth-child(odd) {
-    background-color: var(--nl-primary-color);
+    background-color: var(--nl-secondary-color);
 }
 
 .devIcons {
