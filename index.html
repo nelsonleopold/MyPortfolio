@@ -343,12 +343,13 @@
             <h1>Stuff I Write About</h1>
             <p>I write about things I am learning or interested in. Feel free to send corrections or comments.</p>
             <div class="d-flex flex-column align-items-center align-items-md-start">
+
                 <article class="card mb-4 blog-article">
                     <div class="row g-0 blog-row" id="blog1">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#home">
                                 <img id="b1Image" src="" class="blog-image"
-                                    alt="girl flying on a suitcase">
+                                    alt="generic RPG characters">
                             </a>
                             <div class="blog-date">
                                 <div class="blog-day"></div>
@@ -358,8 +359,7 @@
                         <div class="col-md-8">
                             <div class="card-body h-100 d-flex flex-column justify-content-around">
                                 <h5 id="b1Title" class="card-title"></h5>
-                                <p id="b1Abstract" class="card-text line-clamp">
-                                </p>
+                                <p id="b1Abstract" class="card-text line-clamp"></p>
                                 <div class="text-start">
                                     <a id="b1Slug" href="" class="btn btn-primary btn-sm" target="_blank">Read More</a>
                                 </div>
@@ -368,37 +368,55 @@
                         </div>
                     </div>
                 </article>
+
                 <article class="card mb-4 blog-article">
-                    <div class="row g-0 blog-row">
+                    <div class="row g-0 blog-row" id="blog2">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#home">
-                                <img src="/img/Blog/Blog_CodeTag.jpg" class="blog-image" alt="stylized html tags">
+                                <img id="b2Image" src="" class="blog-image" alt="runners in a marathon">
                             </a>
                             <div class="blog-date">
-                                <div class="blog-day">12</div>
-                                <div class="blog-month">April</div>
+                                <div class="blog-day"></div>
+                                <div class="blog-month"></div>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body h-100 d-flex flex-column justify-content-around">
-                                <h5 class="card-title">The power of css</h5>
-                                <p class="card-text line-clamp">We apply the proverb 'Look before you leap' not only to
-                                    our content
-                                    but our power to repurpose. A company that can synthesize courageously will
-                                    (eventually) be able to transition easily. Imagine a combination of HTTP and
-                                    AJAX. We will revalue our aptitude to empower without depreciating our
-                                    capability to implement wirelessly leads to the capacity to synthesize
-                                    interactively. Without niches, you will lack architectures. Spriti introduced
-                                    new capabilities to the awards page of the customer journey.
-                                </p>
+                                <h5 id="b2Title" class="card-title"></h5>
+                                <p id="b2Abstract" class="card-text line-clamp"></p>
                                 <div class="text-start">
-                                    <a href="#home" class="btn btn-primary btn-sm">Read More</a>
+                                    <a id="b2Slug" href="" class="btn btn-primary btn-sm" target="_blank">Read More</a>
                                 </div>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small id="b2Footer" class="text-muted"></small></p>
                             </div>
                         </div>
                     </div>
                 </article>
+
+                <article class="card mb-4 blog-article">
+                    <div class="row g-0 blog-row" id="blog3">
+                        <div class="col-md-4 blog-header">
+                            <a class="blog-image-link" href="#home">
+                                <img id="b3Image" src="" class="blog-image" alt="placeholder text here">
+                            </a>
+                            <div class="blog-date">
+                                <div class="blog-day"></div>
+                                <div class="blog-month"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body h-100 d-flex flex-column justify-content-around">
+                                <h5 id="b3Title" class="card-title"></h5>
+                                <p id="b3Abstract" class="card-text line-clamp"></p>
+                                <div class="text-start">
+                                    <a id="b3Slug" href="" class="btn btn-primary btn-sm" target="_blank">Read More</a>
+                                </div>
+                                <p class="card-text"><small id="b3Footer" class="text-muted"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
         <section id="contact" class="section-page">
@@ -792,18 +810,51 @@
               let title1 = document.getElementById("b1Title");
               title1.innerHTML = data[0].title;
 
+              let title2 = document.getElementById("b2Title");
+              title2.innerHTML = data[1].title;
+
+              let title3 = document.getElementById("b3Title");
+              title3.innerHTML = data[2].title;
+
+
               let abstract1 = document.getElementById("b1Abstract");
               abstract1.innerHTML = data[0].abstract;
+
+              let abstract2 = document.getElementById("b2Abstract");
+              abstract2.innerHTML = data[1].abstract;
+
+              let abstract3 = document.getElementById("b3Abstract");
+              abstract3.innerHTML = data[2].abstract;
+
 
               let slug1 = document.getElementById("b1Slug");
               slug1.setAttribute("href", `http://nelson-the-dev-blog.herokuapp.com/PostDetails/${data[0].slug}`);
 
+              let slug2 = document.getElementById("b2Slug");
+              slug2.setAttribute("href", `http://nelson-the-dev-blog.herokuapp.com/PostDetails/${data[1].slug}`);
+
+              let slug3 = document.getElementById("b3Slug");
+              slug3.setAttribute("href", `http://nelson-the-dev-blog.herokuapp.com/PostDetails/${data[2].slug}`)
+
+
               let footer1 = document.getElementById("b1Footer");
               footer1.innerHTML = `Last Updated: ${new Date(data[0].updated).toLocaleDateString("en-US")}`;
+
+              let footer2 = document.getElementById("b2Footer");
+              footer2.innerHTML = `Last Updated: ${new Date(data[1].updated).toLocaleDateString("en-US")}`;
+
+              let footer3 = document.getElementById("b3Footer");
+              footer3.innerHTML = `Last Updated: ${new Date(data[2].updated).toLocaleDateString("en-US")}`;
+
 
               let image1 = document.getElementById("b1Image");
               image1.setAttribute("src", `data:${data[0].imageType};base64,${data[0].imageData}`);
 
+              let image2 = document.getElementById("b2Image");
+              image2.setAttribute("src", `data:${data[1].imageType};base64,${data[1].imageData}`);
+
+              let image3 = document.getElementById("b3Image");
+              image3.setAttribute("src", `data:${data[1].imageType};base64,${data[1].imageData}`);
 
 
               let blogDateObject = {
@@ -813,12 +864,26 @@
 
               let blog1Date = new Date(data[0].created).toLocaleDateString("en-US", blogDateObject);
               let blog2Date = new Date(data[1].created).toLocaleDateString("en-US", blogDateObject);
+              let blog3Date = new Date(data[2].created).toLocaleDateString("en-US", blogDateObject); 
 
               let blog1Day = document.querySelector("#blog1 div.blog-day");
               blog1Day.innerHTML = blog1Date.split(" ")[1];
 
+              let blog2Day = document.querySelector("#blog2 div.blog-day");
+              blog2Day.innerHTML = blog2Date.split(" ")[1];
+
+              let blog3Day = document.querySelector("#blog3 div.blog-day");
+              blog3Day.innerHTML = blog3Date.split(" ")[1];
+
+
               let blog1Month = document.querySelector("#blog1 div.blog-month");
               blog1Month.innerHTML = blog1Date.split(" ")[0];
+
+              let blog2Month = document.querySelector("#blog3 div.blog-month");
+              blog2Month.innerHTML = blog2Date.split(" ")[0];
+
+              let blog3Month = document.querySelector("#blog3 div.blog-month");
+              blog3Month.innerHTML = blog3Date.split(" ")[0];
           });
     </script>
 </body>
