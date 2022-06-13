@@ -361,7 +361,7 @@
                                     AJAX.
                                 </p>
                                 <div class="text-start">
-                                    <a href="#home" class="btn btn-primary btn-sm">Read More</a>
+                                    <a id="b1Slug" class="btn btn-primary btn-sm">Read More</a>
                                 </div>
                                 <p class="card-text"><small id="#b1Footer" class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
@@ -794,6 +794,9 @@
 
               let abstract1 = document.getElementById("#b1Abstract");
               abstract1.innerHTML = data[0].abstract;
+
+              let slug1 = document.getElementById("#b1Slug");
+              slug1.setAttribute("href", `http://nelson-the-dev-blog.herokuapp.com/PostDetails/${data[0].slug}`);
 
               let footer1 = document.getElementById("#b1Footer");
               footer1.innerHTML = `Last Updated: ${new Date(data[0].updated).toLocaleDateString("en-US")}`;
