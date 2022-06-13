@@ -146,9 +146,9 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col">
                     <i class="devicon-csharp-plain colored devIcons"></i>
-                    <p>I use C# on a daily basis to build websites and mobile
+                    <p>I use C# on a daily basis to build websites and
                         applications. You can see examples of my work implementing
-                        C# in my projects sections
+                        C# in my projects sections.
                     </p>
                 </div>
                 <div class="col">
@@ -159,8 +159,8 @@
                 </div>
                 <div class="col">
                     <i class="devicon-javascript-plain devIcons"></i>
-                    <p class="card-text">Javascript is the language of the web. I use vanilla js and I am
-                        comfortable with many js frameworks. Check out my challenges section for some js projects.
+                    <p class="card-text">Javascript is the language of the web. 
+                        Check out my challenges section or my Github repo for some JS projects.
                     </p>
 
                 </div>
@@ -168,14 +168,16 @@
                     <i class="devicon-html5-plain colored devIcons"></i>
                     <i class="devicon-css3-plain colored devIcons"></i>
                     <i class="devicon-bootstrap-plain colored devIcons"></i>
-                    <p>I use HTML, CSS and Bootstrap build to beautiful responsive websites. Bootstrap is my go to
-                        CSS framework. Many shy away from front-end I embrace it.</p>
+                    <p>HTML, CSS and Bootstrap can be used to build to beautiful, responsive websites. 
+                        Bootstrap is my go to CSS framework.
+                    </p>
 
                 </div>
                 <div class="col">
                     <i class="devicon-postgresql-plain colored devIcons"></i>
-                    <p class="card-text">SQL is the language of the database. My projects all utilize a database. I
-                        have used Postgres on all them. I can write SQL on any DB platform.</p>
+                    <p class="card-text">SQL is the language of the database. My larger projects all utilize PostGres, 
+                        an open source, relational database.
+                    </p>
 
                 </div>
             </div>
@@ -342,10 +344,10 @@
             <p>I write about things I am learning or interested in. Feel free to send corrections or comments.</p>
             <div class="d-flex flex-column align-items-center align-items-md-start">
                 <article class="card mb-4 blog-article">
-                    <div class="row g-0 blog-row">
+                    <div class="row g-0 blog-row" id="blog1">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#home">
-                                <img id="#b1Image" src="/img/Blog/Blog_FlyingGirl.jpg" class="blog-image"
+                                <img id="b1Image" src="/img/Blog/Blog_FlyingGirl.jpg" class="blog-image"
                                     alt="girl flying on a suitcase">
                             </a>
                             <div class="blog-date">
@@ -355,17 +357,17 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body h-100 d-flex flex-column justify-content-around">
-                                <h5 id="#b1Title" class="card-title">Make SQL queries fly</h5>
-                                <p id="#b1Abstract" class="card-text line-clamp">We apply the proverb 'Look before you leap' not only to
+                                <h5 id="b1Title" class="card-title">Make SQL queries fly</h5>
+                                <p id="b1Abstract" class="card-text line-clamp">We apply the proverb 'Look before you leap' not only to
                                     our content
                                     but our power to repurpose. A company that can synthesize courageously will
                                     (eventually) be able to transition easily. Imagine a combination of HTTP and
                                     AJAX.
                                 </p>
                                 <div class="text-start">
-                                    <a id="#b1Slug" href="" class="btn btn-primary btn-sm" target="_blank">Read More</a>
+                                    <a id="b1Slug" href="" class="btn btn-primary btn-sm" target="_blank">Read More</a>
                                 </div>
-                                <p class="card-text"><small id="#b1Footer" class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small id="b1Footer" class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
                     </div>
@@ -791,21 +793,36 @@
         fetch('https://nelson-the-dev-blog.herokuapp.com/api/GenesisBlogPostTakeTwoApi?num=3')
           .then(response => response.json())
           .then(function(data) {
-              let title1 = document.getElementById("#b1Title");
+              let title1 = document.getElementById("b1Title");
               title1.innerHTML = data[0].title;
 
-              let abstract1 = document.getElementById("#b1Abstract");
+              let abstract1 = document.getElementById("b1Abstract");
               abstract1.innerHTML = data[0].abstract;
 
-              let slug1 = document.getElementById("#b1Slug");
+              let slug1 = document.getElementById("b1Slug");
               slug1.setAttribute("href", `http://nelson-the-dev-blog.herokuapp.com/PostDetails/${data[0].slug}`);
 
-              let footer1 = document.getElementById("#b1Footer");
+              let footer1 = document.getElementById("b1Footer");
               footer1.innerHTML = `Last Updated: ${new Date(data[0].updated).toLocaleDateString("en-US")}`;
 
-              let image1 = document.getElementById("#b1Image");
+              let image1 = document.getElementById("b1Image");
               image1.setAttribute("src", `data:${data[0].imageType};base64,${data[0].imageData}`);
 
+
+
+              let blogDateObject = {
+                month: 'short',
+                day: 'numeric'
+              }
+
+              let blog1Date = new Date(data[0].created).toLocaleDateString("en-US", blogDateObject);
+              let day = new Date(data[1].created).toLocaleDateString("en-US", blogDateObject);
+
+              let blog1Day = document.querySelector("#blog1 div.blog-day");
+              blog1Day.innerHTML = blog1Date.split(" ")[1];
+
+              let blog1Month = document.querySelector("blog1 div.blog-month");
+              blog1Month.innerHTML = blog1Date.split(" ")[0];
           });
     </script>
 </body>
