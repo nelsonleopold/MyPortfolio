@@ -816,12 +816,12 @@
               }
 
               let blog1Date = new Date(data[0].created).toLocaleDateString("en-US", blogDateObject);
-              let day = new Date(data[1].created).toLocaleDateString("en-US", blogDateObject);
+              let blog2Date = new Date(data[1].created).toLocaleDateString("en-US", blogDateObject);
 
               let blog1Day = document.querySelector("#blog1 div.blog-day");
               blog1Day.innerHTML = blog1Date.split(" ")[1];
 
-              let blog1Month = document.querySelector("blog1 div.blog-month");
+              let blog1Month = document.querySelector("#blog1 div.blog-month");
               blog1Month.innerHTML = blog1Date.split(" ")[0];
           });
     </script>
