@@ -83,10 +83,7 @@ header {
 }
 
 .mainHeader {
-    background-image: url(/img/DevPortFolioBG_576.png);
     height: 200px;
-    background-repeat: no-repeat;
-    background-position: right top;
     background-color: var(--nl-primary-color);
 }
 
@@ -104,10 +101,6 @@ header {
 
 .btn-contact-me {
     background-color: var(--nl-secondary-color);
-}
-
-.mainLogo {
-    height: 200px;
 }
 
 .subTitle {
@@ -190,16 +183,20 @@ a.social-icons:hover {
 }
 
 /* breakpoints */
+@media(min-width: 49.98px) {
+    .mainHeader {      
+        height: 150px;
+    }
+}
+
 @media (min-width: 575.98px) {
     .mainHeader {
-        background-image: url("/img/DevPortFolioBG_767.png");
-        height: 200px;
+        height: 225px;     
     }
 }
 
 @media (min-width: 767.98px) {
     .mainHeader {
-        background-image: url("/img/DevPortFolioBG_992.png");
         height: 300px;
     }
 
@@ -218,14 +215,12 @@ a.social-icons:hover {
 
 @media (min-width: 991.98px) {
     .mainHeader {
-        background-image: url("/img/DevPortFolioBG_1200.png");
         height: 400px;
     }
 }
 
 @media (min-width: 1199.98px) {
-    .mainHeader {
-        background-image: url("/img/DevPortFolioBG_2560.png");
+    .mainHeader {       
         height: 500px;
     }
 
@@ -244,7 +239,6 @@ a.social-icons:hover {
 
 @media (min-width: 1399.98px) {
     .mainHeader {
-        background-image: url("/img/DevPortFolioBG_2560.png");
         height: 500px;
     }
 }
