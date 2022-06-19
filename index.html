@@ -202,7 +202,7 @@
                             <div class="hc-content">
                                 <p>A Full-stack bug tracker built with ASP.NET, MVC, C#, and SQL</p>
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#ProjectOneModal">Learn More</button>
+                                    data-bs-target="#BugTrackerModal">Learn More</button>
                             </div>
                         </div>
                     </div>
@@ -526,12 +526,12 @@
     </footer>
 
     <!-- Project modals -->
-    <div class="modal fade" id="ProjectOneModal" tabindex="-1" aria-labelledby="ProjectOneModalLabel"
+    <div class="modal fade" id="BugTrackerModal" tabindex="-1" aria-labelledby="BugTrackerModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ProjectOneModalLabel">Bug Tracker</h5>
+                    <h5 class="modal-title" id="BugTrackerModalLabel">Bug Tracker</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -539,43 +539,43 @@
                         <div class="row">
                             <div class="col-12 col-md-5">
                                 <!-- Begin Carousel Here -->
-                                <div id="carouselProjectOne" class="carousel slide" data-bs-ride="carousel">
+                                <div id="carouselBugTracker" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#carouselProjectOne" data-bs-slide-to="0"
+                                        <button type="button" data-bs-target="#carouselBugTracker" data-bs-slide-to="0"
                                             class="active" aria-current="true" aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#carouselProjectOne" data-bs-slide-to="1"
+                                        <button type="button" data-bs-target="#carouselBugTracker" data-bs-slide-to="1"
                                             aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#carouselProjectOne" data-bs-slide-to="2"
+                                        <button type="button" data-bs-target="#carouselBugTracker" data-bs-slide-to="2"
                                             aria-label="Slide 3"></button>
-                                        <button type="button" data-bs-target="#carouselProjectOne" data-bs-slide-to="3"
+                                        <button type="button" data-bs-target="#carouselBugTracker" data-bs-slide-to="3"
                                             aria-label="Slide 4"></button>
                                     </div>
                                     <!-- Images Go Here -->
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="/img/AddressBookBackgroundImage.png" class="d-block w-100" 
+                                            <img src="/img/bugtrackerDashboard.png" class="d-block w-100" 
                                             alt="Under Construction">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="/img/screenshots/BugTrackerScreen1.jpg" class="d-block w-100"
+                                            <img src="/img/bugtrackerAllTickets.png" class="d-block w-100"
                                                 alt="Under Construction">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="/img/screenshots/BugTrackerScreen2.jpg" class="d-block w-100"
+                                            <img src="/img/bugtrackerTicketDetails.png" class="d-block w-100"
                                                 alt="Under Construction">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="/img/screenshots/BugTrackerScreen3.jpg" class="d-block w-100"
+                                            <img src="/img/bugtrackerProjectDetails.png" class="d-block w-100"
                                                 alt="Under Construction">
                                         </div>
                                     </div>
                                     <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselProjectOne" data-bs-slide="prev">
+                                        data-bs-target="#carouselBugTracker" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
                                     <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselProjectOne" data-bs-slide="next">
+                                        data-bs-target="#carouselBugTracker" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>
@@ -584,10 +584,16 @@
                             <div class="col-12 col-md-7">
                                 <!-- Project Description Goes Here -->
                                 <h3>Bug Tracker</h3>
-                                <p>The Bug Tracker is still under construction. Check back soon
-                                    for more details.
+                                <p>The Bug Tracker is the result of several weeks of hard work. It is a bug/issue
+                                    tracker that uses a PostGres database and C# on the backend. It is a multi-tenant
+                                    app; users are assigned roles and have different permission levels; projects are 
+                                    created by admins or project managers, and individual tickets are associated with
+                                    each project.
                                 </p>
                                 <p>
+                                    Projects and tickets retain historical info and notifications are automatically
+                                    sent to inform users of important changes to a ticket. Tickets allow comments and
+                                    attachments. Feel free to login as a Demo user or register and login if you'd prefer.
                                 </p>
                             </div>
                         </div>
